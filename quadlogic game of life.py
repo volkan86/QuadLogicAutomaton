@@ -1,3 +1,6 @@
+# ---------------- Hücre 1 ----------------
+# Etkileşimli arka ucu açın (ipympl yüklü değilse:  pip install ipympl)
+%matplotlib widget
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
@@ -131,50 +134,7 @@ class QLASimulation:
 
 # Kullanım
 sim = QLASimulation()
-sim.start_animation() AttributeError                            Traceback (most recent call last)
-Cell In[12], line 2
-      1 import numpy as np
-----> 2 import matplotlib.pyplot as plt
-      3 from matplotlib.colors import ListedColormap
-      4 from matplotlib.widgets import Slider, Button
-
-File ~\anaconda3\Lib\site-packages\matplotlib\__init__.py:161
-    157 from packaging.version import parse as parse_version
-    159 # cbook must import matplotlib only within function
-    160 # definitions, so it is safe to import from it here.
---> 161 from . import _api, _version, cbook, _docstring, rcsetup
-    162 from matplotlib.cbook import sanitize_sequence
-    163 from matplotlib._api import MatplotlibDeprecationWarning
-
-File ~\anaconda3\Lib\site-packages\matplotlib\rcsetup.py:28
-     26 from matplotlib.cbook import ls_mapper
-     27 from matplotlib.colors import Colormap, is_color_like
----> 28 from matplotlib._fontconfig_pattern import parse_fontconfig_pattern
-     29 from matplotlib._enums import JoinStyle, CapStyle
-     31 # Don't let the original cycler collide with our validating cycler
-
-File ~\anaconda3\Lib\site-packages\matplotlib\colors.py:57
-     55 import matplotlib as mpl
-     56 import numpy as np
----> 57 from matplotlib import _api, _cm, cbook, scale, _image
-     58 from ._color_data import BASE_COLORS, TABLEAU_COLORS, CSS4_COLORS, XKCD_COLORS
-     61 class _ColorMapping(dict):
-
-File ~\anaconda3\Lib\site-packages\matplotlib\scale.py:764
-    755         docs.extend([
-    756             f"    {name!r}",
-    757             "",
-    758             textwrap.indent(docstring, " " * 8),
-    759             ""
-    760         ])
-    761     return "\n".join(docs)
---> 764 _docstring.interpd.register(
-    765     scale_type='{%s}' % ', '.join([repr(x) for x in get_scale_names()]),
-    766     scale_docs=_get_scale_docs().rstrip(),
-    767     )
-
-AttributeError: '_ArtistPropertiesSubstitution' object has no attribute 'register'
-
+sim.start_animation()
 
 
 
